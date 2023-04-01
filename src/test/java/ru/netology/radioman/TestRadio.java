@@ -99,6 +99,7 @@ public class TestRadio {
         long actual = radio.getVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @ParameterizedTest
     @CsvFileSource(files = "src/test/resources/TestMinVolume.csv")
     public void TestMinVolume(long expected) {

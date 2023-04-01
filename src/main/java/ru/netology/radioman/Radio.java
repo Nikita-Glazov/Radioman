@@ -1,4 +1,5 @@
 package ru.netology.radioman;
+
 public class Radio {
     private int currentStation;
     private int volume;
@@ -11,46 +12,45 @@ public class Radio {
         return volume;
     }
 
-    public void next (){
-        if(currentStation == 9){
+    public void next() {
+        if (currentStation == 9) {
             currentStation = 0;
-        }
-        else{
+        } else {
             currentStation++;
         }
     }
-    public void prev (){
-        if(currentStation == 0){
+
+    public void prev() {
+        if (currentStation == 0) {
             currentStation = 9;
-        }
-        else{
+        } else {
             currentStation--;
         }
     }
 
     public void setCurrentStation(int newCurrentStation) {
         if (newCurrentStation < 0 || newCurrentStation > 9) {
-        return;
+            return;
         }
         currentStation = newCurrentStation;
     }
 
     public void setVolume(int newVolume) {
-        if ((newVolume < 0) || (newVolume > 10)){
+        if ((newVolume < 0) || (newVolume > 10)) {
             return;
         }
         volume = newVolume;
     }
 
-    public void increaseTheVolumeByOne(){
-        if(volume == 10){
+    public void increaseTheVolumeByOne() {
+        if (volume == 10) {
             return;
         }
         volume++;
     }
 
-    public void loweringTheVolumeByOne(){
-        if(volume == 0){
+    public void loweringTheVolumeByOne() {
+        if (volume == 0) {
             return;
         }
         volume--;

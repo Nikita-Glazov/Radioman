@@ -99,8 +99,8 @@ public class TestRadio {
     }
 
     @ParameterizedTest
-    @CsvFileSource(files = "src/test/resources/TestMaxVolume.csv")
-    public void TestMaxVolume(long expected) {
+    @CsvFileSource(files = "src/test/resources/testMaxVolume.csv")
+    public void testMaxVolume(long expected) {
         Radio radio = new Radio();
         radio.setVolume(10);
         radio.increaseTheVolumeByOne();

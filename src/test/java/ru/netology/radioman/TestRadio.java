@@ -15,10 +15,19 @@ public class TestRadio {
     }
 
     @ParameterizedTest
-    @CsvFileSource(files = "src/test/resources/setStationOutOfRange.csv")
-    public void setStationOutOfRange(long expected) {
+    @CsvFileSource(files = "src/test/resources/setStationUpperOfRange.csv")
+    public void setStationUpperOfRange(long expected) {
         Radio radio = new Radio();
         radio.setCurrentStation(15);
+        long actual = radio.getCurrentStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(files = "src/test/resources/setStationLowOfRange.csv")
+    public void setStationLowOfRange(long expected) {
+        Radio radio = new Radio();
+        radio.setCurrentStation(-2);
         long actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
@@ -72,10 +81,19 @@ public class TestRadio {
     }
 
     @ParameterizedTest
-    @CsvFileSource(files = "src/test/resources/setVolumeOutOfRange.csv")
-    public void setVolumeOutOfRange(long expected) {
+    @CsvFileSource(files = "src/test/resources/setVolumeUpperOfRange.csv")
+    public void setVolumeUpperOfRange(long expected) {
         Radio radio = new Radio();
         radio.setVolume(15);
+        long actual = radio.getVolume();
+        Assertions.assertEquals(expected, actual);
+
+    }
+    @ParameterizedTest
+    @CsvFileSource(files = "src/test/resources/setVolumeLowOfRange.csv")
+    public void setVolumeLowOfRange(long expected) {
+        Radio radio = new Radio();
+        radio.setVolume(-4);
         long actual = radio.getVolume();
         Assertions.assertEquals(expected, actual);
     }
@@ -118,5 +136,9 @@ public class TestRadio {
         long actual = radio.getVolume();
         Assertions.assertEquals(expected, actual);
     }
+
+
+
+
 
 }
